@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Tumor Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Brain Tumor Detection</h1>
+
+        <!-- Display flash messages if any -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="alert">
+                    {% for message in messages %}
+                        <p>{{ message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <!-- Upload Form (only shown when logged in) -->
+        {% if current_user.is_authenticated %}
+        <form action="/" method="POST" enctype="multipart/form-data">
+            <label for="file">Upload an Image (JPG, JPEG, PNG)</label>
+            <input type="file" name="file" accept="image/*" required>
+            <button type="submit">Upload Image</button>
+        </form>
+        {% else %}
+            <p>Please <a href="{{ url_for('login') }}">login</a> to upload an image.</p>
+        {% endif %}
+
+        <!-- Display the prediction result if available -->
+        {% if prediction_text %}
+            <div class="result">
+                <div class="image-frame">
+                    <!-- Display the uploaded image -->
+                    <img src="{{ url_for('static', filename='uploads/' + image_path) }}" alt="Uploaded Image">
+                </div>
+
+                <div class="symptoms-frame">
+                    <h2>{{ prediction_text }}</h2>
+                    {% if symptoms %}
+                        <h3>Possible Symptoms:</h3>
+                        <ul>
+                            {% for symptom in symptoms %}
+                                <li>{{ symptom }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
