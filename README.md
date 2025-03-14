@@ -1,5 +1,4 @@
 # Brain-Tumor-Detection-Using-CNN
-# E-Mail Spam Detection
 
 This project is a **Brain Tumor Detection** system that analyzes MRI scan images to classify them as either **Tumor** or **No Tumor**. The goal is to assist medical professionals in identifying brain tumors using deep learning techniques.
 
@@ -73,8 +72,11 @@ You can use publicly available datasets such as the Kaggle Brain Tumor Dataset
 - Extend the dataset for better generalization.
 
 ## Screenshot of project
-![Input Screen](images/Email-Spam.jpg)
+Home Page
+![Input Screen](images/brain-1.jpg)
 
+Prediction
+![Input Screen](images/brain-2.jpg)
 
 ## Contributing
 Feel free to submit issues or pull requests. All contributions are welcome!
