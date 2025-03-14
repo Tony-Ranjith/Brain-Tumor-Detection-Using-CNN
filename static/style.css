@@ -1,0 +1,127 @@
+/* Apply background image to the entire page */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    height: 100vh; /* Full height of the viewport */
+    background-image: url('/static/background.jpg'); /* Ensure this image is in the static folder */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevents scrolling if content overflows the viewport */
+}
+
+/* Container for the content */
+.container {
+    max-width: 600px;
+    width: 100%; /* Ensure full width on smaller screens */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.85); /* Slightly more opaque background for better readability */
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Enhanced shadow for better depth */
+}
+
+/* Styling the form */
+form input[type="file"] {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    outline: none;
+    width: 100%; /* Full-width input */
+    box-sizing: border-box; /* Include padding and border in element's total width */
+    transition: border-color 0.3s ease;
+}
+
+form input[type="file"]:focus {
+    border-color: #1E90FF; /* Highlight border on focus */
+}
+
+form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #1E90FF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+form button:hover {
+    background-color: #0b7acc;
+}
+
+/* Result section */
+.result {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9); /* Slight transparency for better contrast */
+    border: 2px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+}
+
+/* Styling result text */
+.result h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.5em; /* Larger font size for better readability */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Adding shadow to make the text pop against the dark background */
+}
+
+/* Image frame */
+.image-frame {
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    border: 2px solid #ccc;
+    max-width: 100%;
+    display: inline-block;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Light shadow for image frame */
+}
+
+/* Styling the uploaded image */
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block; /* Remove inline-block behavior */
+    max-height: 500px; /* Set max height to ensure images are not too large */
+    object-fit: contain; /* Ensure the image scales correctly within its container */
+}
+
+/* Add responsive design for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Reduce width for smaller screens */
+    }
+    .result h2 {
+        font-size: 1.3em; /* Adjust heading size for mobile */
+    }
+    img {
+        max-width: 90%; /* Make sure images are responsive */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%; /* Further reduce width for very small screens */
+    }
+    .result h2 {
+        font-size: 1.1em; /* Smaller text for very small screens */
+    }
+}
+
+
+
+
+
